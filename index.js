@@ -1,5 +1,5 @@
 let firstCard = 10;
-let secondCard = 13;
+let secondCard = 12;
 
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
@@ -7,7 +7,14 @@ let userAlive = true;
 
 let message = "";
 
-if (sum <= 20){
+let messageEl = document.getElementById("message-el");
+let sumEl = document.getElementById("sum-el");
+
+
+
+function startgame(){
+    sumEl.textContent = "Sum: " + sum;
+    if (sum <= 20){
     message = "Do you want to draw another card?";
 
 } else if (sum === 21){
@@ -18,9 +25,8 @@ if (sum <= 20){
     message = "You bust!";
     userAlive = false;
 };
-
+messageEl.textContent = message;
+}
 //CASH OUT!
 console.log(sum);
-console.log(message);
-console.log("do you have a blackjack? " + hasBlackJack);
-console.log("are you still alive? " + userAlive);
+

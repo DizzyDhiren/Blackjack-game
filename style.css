@@ -1,12 +1,42 @@
 body{
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: green;
+    height: 100vh;
 }
 
 h1{ 
     font-family: 'Arial', sans-serif;
     font-weight: bold;
     font-size: 48px;
+}
+
+p{
+    color: white;
+    font-size: 34px;
+    font-family: 'Arial', sans-serif;
+}
+
+#message-el{
+    font-style: italic;
+}
+
+.main-container{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    height: 500px;
+}
+
+#start-btn{
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgb(234, 224, 29);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
