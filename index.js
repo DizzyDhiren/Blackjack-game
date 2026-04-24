@@ -1,5 +1,6 @@
-let firstCard = 10;
-let secondCard = 12;
+let firstCard = 8;
+let secondCard = 10;
+ let cardsArray = [firstCard, secondCard];
 
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
@@ -9,10 +10,22 @@ let message = "";
 
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
-
-
+let cardsEl = document.getElementById("cards-el");
 
 function startgame(){
+    renderGame();
+}
+
+function renderGame(){
+    //render out firstCard and secondCard
+    cardsEl.textContent = "Cards: " ;
+
+    for (let i = 0  ; cardsArray.length > i; i++){
+        cardsEl.textContent += cardsArray[i] + " ";
+    }
+
+    //render out tall the cards we have
+
     sumEl.textContent = "Sum: " + sum;
     if (sum <= 20){
     message = "Do you want to draw another card?";
@@ -30,3 +43,11 @@ messageEl.textContent = message;
 //CASH OUT!
 console.log(sum);
 
+//draw a new card
+function drawNewCard(){
+    let card = 7;
+    sum += card;
+    cardsArray.push(card);
+    console.log(cardsArray);
+    renderGame();
+}
