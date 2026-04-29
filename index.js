@@ -23,11 +23,12 @@ function getRandomCard(){
 }
 
 function startgame(){
-    isAlive = true;
+    userAlive = true;
     let firstCard = getRandomCard();
     let secondCard = getRandomCard();
     cardsArray = [firstCard, secondCard];
     sum = firstCard + secondCard;
+    console.log(userAlive);
     renderGame();
 }
 
@@ -59,11 +60,13 @@ messageEl.textContent = message;
 console.log(sum);
 
 //draw a new card
-function drawNewCard(){
+function drawNewCard(){ 
+    if (userAlive == true && hasBlackJack == false){
     let card = getRandomCard();
     sum += card;
     cardsArray.push(card);
     console.log(cardsArray);
     renderGame();
+    }
 }
 
